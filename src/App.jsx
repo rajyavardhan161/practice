@@ -1,7 +1,5 @@
 import { useState } from 'react';
 import './App.css';
-import { MdDelete } from "react-icons/md";
-import { HiCheck } from "react-icons/hi";
 
 function App() {
   const [input1, setInput1] = useState('');
@@ -16,15 +14,14 @@ function App() {
       updatedList[editindex] = input1;
       setInput2(updatedList);
       setindex(null);
-    } 
-    else {
+    } else {
       setInput2([...input2, input1]);
     }
     setInput1('');
   }
 
   function remove(index) {
-    const updated = [...input2.slice(0, index), ...input2.slice(index + 1)];
+    const updated = input2.filter((_, i) => i !== index);
     setInput2(updated);
   }
 
@@ -35,22 +32,47 @@ function App() {
 
   return (
     <>
-      <div className="main">
+      <div className="mb-3 ml-8 mt-8 text-5xl font-semibold">Todo</div>
+
+      <div className="main ml-8 mt-8">
         <input
+          className="border-2 border-black rounded p-2"
           type="text"
           placeholder="Enter your value"
           value={input1}
           onChange={(e) => setInput1(e.target.value)}
         />
-        <button onClick={one}>{editindex !== null ? "Update" : "Add"}</button>
+        <button
+          onClick={one}
+          className="ml-4 border-2 border-black rounded p-2"
+        >
+          {editindex !== null ? "Update" : "Add"}
+        </button>
       </div>
 
       {input2.map((item, index) => (
-        <p key={index}>
-          {item}
-          <MdDelete onClick={() => remove(index)}/>
-          <HiCheck onClick={() => edit(item, index)}/>
-        </p>
+        <div
+          key={index}
+          className=" value ml-8 mt-2 flex items-center justify-between w-fit border border-black p-2 rounded"
+        >
+          <span>{item}</span>
+          <div className="flex pl-2">
+            <span
+              onClick={() => {
+                if (editindex === null) remove(index);
+              }}
+              className="text-red-600 text-lg cursor-pointer"
+            >
+              🗑️
+            </span>
+            <span
+              onClick={() => edit(item, index)}
+              className="text-green-600 pl-2 text-xl cursor-pointer"
+            >
+              ✏️
+            </span>
+          </div>
+        </div>
       ))}
     </>
   );

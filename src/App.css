@@ -1,10 +1,13 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  width: 500px;
+  height: auto;
+  border: 1px solid;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 50px;
+  border-radius: 18px;
 }
-
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -39,4 +42,10 @@
 
 .read-the-docs {
   color: #888;
+}
+.value {
+  margin-bottom: 15px;
+}
+.main {
+  margin-bottom: 15px;
 }
