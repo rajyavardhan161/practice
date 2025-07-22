@@ -7,6 +7,7 @@
   margin: auto;
   margin-top: 50px;
   border-radius: 18px;
+  background: linear-gradient(270deg, rgb(197, 197, 197), rgb(211, 81, 81));
 }
 .logo {
   height: 6em;
@@ -45,7 +46,17 @@
 }
 .value {
   margin-bottom: 15px;
+  background-color: white;
 }
 .main {
   margin-bottom: 15px;
+}
+.btn {
+  background-color: white;
+}
+.name span {
+  color: red;
+}
+.name {
+  color: rgb(47, 47, 47);
 }

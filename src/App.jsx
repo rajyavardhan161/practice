@@ -32,7 +32,7 @@ function App() {
 
   return (
     <>
-      <div className="mb-3 ml-8 mt-8 text-5xl font-semibold">Todo</div>
+      <div className="name mb-3 ml-8 mt-8 text-5xl font-semibold">To<span>do</span></div>
 
       <div className="main ml-8 mt-8">
         <input
@@ -44,7 +44,7 @@ function App() {
         />
         <button
           onClick={one}
-          className="ml-4 border-2 border-black rounded p-2"
+          className=" btn ml-4 border-2 border-black rounded p-2"
         >
           {editindex !== null ? "Update" : "Add"}
         </button>
