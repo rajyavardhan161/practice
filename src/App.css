@@ -5,6 +5,8 @@
   justify-content: center;
   align-items: center;
   margin: auto;
+  overflow: hidden;
+  position: relative;
   margin-top: 50px;
   border-radius: 18px;
   background: linear-gradient(270deg, rgb(197, 197, 197), rgb(211, 81, 81));
@@ -36,23 +38,37 @@
     animation: logo-spin infinite 20s linear;
   }
 }
-
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.value {
+  animation: slideUp 0.5s ease-in-out;
+  margin-bottom: 15px;
+  background-color: white;
+  transition: all 0.3s ease-in-out;
+}
 .card {
   padding: 2em;
 }
-
 .read-the-docs {
   color: #888;
-}
-.value {
-  margin-bottom: 15px;
-  background-color: white;
 }
 .main {
   margin-bottom: 15px;
 }
 .btn {
   background-color: white;
+}
+.btn:hover {
+  background: linear-gradient(120deg, rgb(197, 197, 197), rgb(211, 81, 81));
+  color: white;
 }
 .name span {
   color: red;
